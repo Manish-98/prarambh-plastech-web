@@ -12,22 +12,34 @@ export default function ClientFilter({ initialProducts }) {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Search products..."
-        className="w-full mb-8 p-3 rounded border border-[--color-border] bg-[--color-soft] text-[--color-foreground]"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-      />
+      <div className="py-6 px-[10%]">
+        <div className="relative max-w-md">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input
+            type="text"
+            placeholder="Search Products..."
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            className="w-full pl-12 pr-4 py-3 bg-gray-50 border-0 rounded-lg text-gray-700 placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+          />
+        </div>
+      </div>
+      <hr className="border-gray-200" />
 
-      <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-4">
-        {filtered.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div className="py-12 px-[10%] bg-soft">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {filtered.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
 
-        {filtered.length === 0 && (
-          <p className="text-gray-500">No products found.</p>
-        )}
+          {filtered.length === 0 && (
+            <p className="text-gray-500">No products found.</p>
+          )}
+        </div>
       </div>
     </>
   )

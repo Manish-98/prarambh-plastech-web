@@ -7,8 +7,18 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6">Our Products</h1>
+    <main className="w-full mx-auto">
+      <div className="bg-soft py-12">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            Our Products
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            Discover our comprehensive range of industrial packaging solutions designed 
+            for durability, sustainability, and efficiency.
+          </p>
+        </div>
+      </div>
       <ClientFilter initialProducts={products} />
     </main>
   )
