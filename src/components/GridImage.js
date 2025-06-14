@@ -9,6 +9,10 @@ const GridImage = ({ src, alt }) => (
             width={800}
             height={400}
             className="w-full h-64 object-cover"
+            quality={80}
+            placeholder="blur"
+            blurDataURL="/placeholder.svg"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={false}
         />
         <div className="absolute inset-0 bg-accent opacity-20"></div>

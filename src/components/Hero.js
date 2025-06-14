@@ -6,7 +6,16 @@ const Hero = () => {
         <section className="relative h-[70vh] w-screen flex items-center justify-center overflow-hidden">
 
             <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-                <Image src="/banner-light.png" alt="" className="object-cover" fill />
+                <Image 
+                    src="/banner-light.png" 
+                    alt="Packaging solutions banner background" 
+                    fill 
+                    className="object-cover" 
+                    priority={true}
+                    quality={80}
+                    placeholder="blur"
+                    blurDataURL="/placeholder.svg" // Use the external SVG placeholder
+                />
                 <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_0%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.8)_100%)]"></div>
             </div>
 

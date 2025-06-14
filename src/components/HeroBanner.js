@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const HeroBanner = ({ 
     title, 
@@ -7,18 +8,25 @@ const HeroBanner = ({
     minHeight = "400px"
 }) => {
     return (
-        <div
-            className="relative bg-cover bg-center bg-fixed flex items-center justify-center"
-            style={{
-                backgroundImage: `linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('${backgroundImage}')`,
-                minHeight: minHeight
-            }}
-        >
-            <div className="text-center text-white px-5 py-20">
+        <div className="relative flex items-center justify-center overflow-hidden" style={{ minHeight }}>
+            {/* Optimized background image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src={backgroundImage}
+                    alt="Hero banner background"
+                    fill
+                    className="object-cover object-center"
+                    quality={80}
+                    priority={true}
+                    placeholder="blur"
+                    blurDataURL="/placeholder.svg" // Use the external SVG placeholder
+                />
+                {/* Overlay for darkening */}
+                <div className="absolute inset-0 bg-[rgba(44,62,80,0.85)]" />
+            </div>
+            <div className="relative z-10 text-center text-white px-5 py-20 w-full">
                 <h1 className="text-5xl md:text-6xl font-bold mb-6">{title}</h1>
-                <p className="text-lg md:text-xl max-w-3xl mx-auto">
-                    {description}
-                </p>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto">{description}</p>
             </div>
         </div>
     );
