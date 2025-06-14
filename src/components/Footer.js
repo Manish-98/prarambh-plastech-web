@@ -20,11 +20,11 @@ const Footer = ({
     const contactInfo = [
         {
             icon: 'location',
-            text: 'Ahmedabad, Gujarat, India'
+            text: 'Godown No. 1, Block No 922/2,\nYuvraj Estate, Giramtha, Daskroi,\nAhmedabad - 382425,\nGujarat, India'
         },
         {
             icon: 'phone',
-            text: '+1 (555) 123-4567'
+            text: '+91 80459 06963'
         },
         {
             icon: 'email',
@@ -71,10 +71,10 @@ const Footer = ({
     };
 
     return (
-        <footer className="bg-gray-800 text-white">
+        <footer className="bg-foreground-dark text-white">
             {/* CTA Section */}
             {showCTA && (
-                <div className="bg-gray-700 py-16">
+                <div className="bg-foreground py-16">
                     <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
                         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
                             {ctaTitle}
@@ -134,7 +134,7 @@ const Footer = ({
                                         <div className="mt-1">
                                             <ContactIcon iconType={contact.icon} />
                                         </div>
-                                        <span className="text-gray-400">{contact.text}</span>
+                                        <span className="text-gray-400 whitespace-pre-line">{contact.text}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -142,7 +142,7 @@ const Footer = ({
                     </div>
 
                     {/* Bottom Bar */}
-                    <div className="border-t border-gray-700 mt-12 pt-8">
+                    <div className="border-t border-foreground mt-12 pt-8">
                         <div className="flex flex-col md:flex-row justify-between items-center">
                             <p className="text-gray-400 text-sm">
                                 © 2025 Prarambh Plastech. All rights reserved.
