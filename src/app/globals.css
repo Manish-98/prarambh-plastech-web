@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
+/* 🌐 Light Theme Variables */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2C2C2C;       /* Dark Charcoal */
+  --border: #E0E0E0;           /* Cool Grey */
+  --soft: #F4FBFD;             /* Soft Blue Tint */
+  --accent: #00B4D8;           /* Sky Blue */
 }
 
+
+/* 🎨 Tailwind Theme Bindings */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-soft: var(--soft);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans, Inter, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 🔤 Base Styling */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  @apply antialiased;
+}
+
+
+.button {
+  background-color: var(--accent);
+  color: #fff;
+  @apply bg-accent border-2 border-accent hover:bg-accent/80 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[200px]
+}
+
+.transparent-button {
+  @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-accent font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px] hover:shadow-xl
+}
+
+/* ✨ Reusable Layout Classes (Optional) */
+.section {
+  background-color: var(--soft);
+  @apply px-4 md:px-12 py-12;
+}
+
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  @apply rounded-xl shadow-sm p-6;
+}
+
+.hero-banner {
+  background-color: var(--soft);
+  @apply w-full h-[500px] flex items-center justify-center;
 }
