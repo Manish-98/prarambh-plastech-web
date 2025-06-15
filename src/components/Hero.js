@@ -14,9 +14,9 @@ const Hero = () => {
                     priority={true}
                     quality={80}
                     placeholder="blur"
-                    blurDataURL="/placeholder.svg" // Use the external SVG placeholder
+                    blurDataURL="/placeholder.svg" 
                 />
-                <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_0%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.8)_100%)]"></div>
+                <div className="absolute inset-0 bg-foreground/80" />
             </div>
 
 

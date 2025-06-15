@@ -19,10 +19,10 @@ const HeroBanner = ({
                     quality={80}
                     priority={true}
                     placeholder="blur"
-                    blurDataURL="/placeholder.svg" // Use the external SVG placeholder
+                    blurDataURL="/placeholder.svg" 
                 />
                 {/* Overlay for darkening */}
-                <div className="absolute inset-0 bg-[rgba(44,62,80,0.85)]" />
+                <div className="absolute inset-0 bg-foreground/80" />
             </div>
             <div className="relative z-10 text-center text-white px-5 py-20 w-full">
                 <h1 className="text-5xl md:text-6xl font-bold mb-6">{title}</h1>
