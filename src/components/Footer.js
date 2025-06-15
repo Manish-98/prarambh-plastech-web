@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import IconGenerator from './IconGenerator';
-import { contactInfo } from '@/lib/data/contactInfo';
+import { contactInfo, whatsappContact } from '@/lib/data/contactInfo';
 
 const Footer = ({
     ctaTitle = "Have a packaging challenge? Let's solve it together.",
     ctaSubtitle = "Get in touch with our experts for customized packaging solutions",
     ctaButtonText = "Contact Us",
-    ctaButtonLink = "/contact",
+    ctaButtonLink = `https://wa.me/${whatsappContact.number}?text=${encodeURIComponent(whatsappContact.defaultMessage)}`,
     companyTagline = "Sustainable Packaging, Premium Quality",
     showCTA = true
 }) => {
@@ -27,7 +27,14 @@ const Footer = ({
                     <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
                         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">{ctaTitle}</h2>
                         <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">{ctaSubtitle}</p>
-                        <Link href={ctaButtonLink} className="button"> {ctaButtonText} </Link>
+                        <Link 
+                            href={ctaButtonLink} 
+                            className="button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        > 
+                            {ctaButtonText} 
+                        </Link>
                     </div>
                 </div>
             )}

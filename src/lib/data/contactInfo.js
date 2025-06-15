@@ -1,3 +1,8 @@
+export const whatsappContact = {
+    number: '+919883863810',
+    defaultMessage: 'Hi Prarambh Plastech, I have a query regarding your products.'
+};
+
 export const contactInfo = [
     {
         icon: 'location',
@@ -6,8 +11,8 @@ export const contactInfo = [
     },
     {
         icon: 'phone',
-        text: '+91 80459 06963',
-        link: 'tel:+918045906963'
+        text: '+91 98838 63810',
+        link: `tel:${whatsappContact.number}`
     },
     {
         icon: 'email',
@@ -17,6 +22,6 @@ export const contactInfo = [
     {
         icon: 'whatsapp',
         text: 'WhatsApp Support',
-        link: 'https://wa.me/+918045906963?text=Hi%20Prarambh%20Plastech%2C%20I%20have%20a%20query%20regarding%20your%20products.'
+        link: `https://wa.me/${whatsappContact.number}?text=${encodeURIComponent(whatsappContact.defaultMessage)}`
     }
 ]; 

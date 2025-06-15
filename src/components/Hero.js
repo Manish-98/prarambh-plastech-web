@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { whatsappContact } from '@/lib/data/contactInfo';
 
 const Hero = () => {
     return (
@@ -33,7 +34,7 @@ const Hero = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Link href="/products" className="button">View Products</Link>
-                    <Link href="/contact" className="transparent-button">Get Quote</Link>
+                    <Link href={`https://wa.me/${whatsappContact.number}?text=${encodeURIComponent(whatsappContact.defaultMessage)}`} className="transparent-button">Get Quote</Link>
                 </div>
             </div>
 
