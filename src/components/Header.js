@@ -4,17 +4,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import IconGenerator from './IconGenerator';
+import { mainNavigation } from '@/lib/data/navigation';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
-    { name: 'Industries', href: '/industries' },
-    { name: 'About Us', href: '/about-us' },
-    { name: 'Contact', href: '/contact' },
-  ];
 
   return (
     <header className="shadow-sm border-b border-gray-200">
@@ -38,7 +31,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+            {mainNavigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -49,7 +42,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -64,25 +57,24 @@ const Header = () => {
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {mainNavigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 };

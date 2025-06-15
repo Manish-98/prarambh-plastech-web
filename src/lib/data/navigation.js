@@ -3,5 +3,5 @@ export const mainNavigation = [
     { name: 'Products', href: '/products' },
     { name: 'Industries', href: '/industries' },
     { name: 'About Us', href: '/about-us' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'BOPP Tapes', href: '/bopp-tapes' }
 ]; 
