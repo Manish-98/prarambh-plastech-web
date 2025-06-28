@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// app/layout.js or app/layout.tsx
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -31,6 +30,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
   },
+  verification: {
+    google: "XsmG-s2Or73fTvOQSCH0LoB4jzveAlLUQ78bKpxBNAM"
+  }
 };
 
 export default function RootLayout({ children }) {
