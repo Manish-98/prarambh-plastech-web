@@ -7,6 +7,25 @@ import { companyData } from '@/lib/data/companyData';
 import { facilityImages } from '@/lib/data/facilityImages';
 import { missionData } from '@/lib/data/missionData';
 
+export const metadata = {
+    title: 'About Us',
+    description: 'Learn about our journey, values, and commitment to sustainability.',
+    openGraph: {
+        url: '/about-us',
+        images: [
+            {
+                url: '/api/og?title=About%20Us&subtitle=Our%20Story&logo=/logo.png&bg=/banner-light.png',
+                width: 1200,
+                height: 630,
+                alt: 'About Us OG Image',
+            },
+        ],
+    },
+    twitter: {
+        images: ['/api/og?title=About%20Us&subtitle=Our%20Story&logo=/logo.png&bg=/banner-light.png'],
+    },
+};
+
 const AboutUs = () => {
     return (
         <div className="min-h-screen">

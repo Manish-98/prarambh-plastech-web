@@ -14,9 +14,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// app/layout.js or app/layout.tsx
+
 export const metadata = {
-  title: "Prarambh Plastech",
-  description: "Prarambh Plastech website",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  title: {
+    default: 'Prarambh Plastech',
+    template: '%s | Prarambh Plastech',
+  },
+  description: 'Eco-friendly plastic packaging solutions for a sustainable future.',
+  openGraph: {
+    siteName: 'Prarambh Plastech',
+    type: 'website',
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({ children }) {

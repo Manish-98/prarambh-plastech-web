@@ -7,6 +7,26 @@ import Accordion from '@/components/Accordion.js';
 import { faqs, industries, boppFeatures, celloTapeFeatures, timelineData, boppTypes } from '@/lib/data/bopp-data';
 import Image from 'next/image';
 
+export const metadata = {
+    title: 'BOPP Tapes',
+    description: 'Discover durable BOPP tapes for industrial packaging — strong, clean, and sustainable.',
+    openGraph: {
+        url: '/bopp-tapes',
+        images: [
+            {
+                url: '/api/og?title=BOPP%20Tapes&subtitle=Strong%20%26%20Sustainable&logo=/logo.png&bg=/banner-light.png',
+                width: 1200,
+                height: 630,
+                alt: 'BOPP Tapes OG Image',
+            },
+        ],
+    },
+    twitter: {
+        images: ['/api/og?title=BOPP%20Tapes&subtitle=Strong%20%26%20Sustainable&logo=/logo.png&bg=/banner-light.png'],
+    },
+};
+
+
 const BOPPTapesPage = () => {
     return (
         <div className="relative min-h-screen">
@@ -98,11 +118,11 @@ const BOPPTapesPage = () => {
                             ))}
                         </div>
                         <div className="flex justify-center">
-                            <Image 
-                                src="/bopp-tape-banner.jpeg" 
-                                alt="BOPP Tape in industrial use" 
-                                width={480} 
-                                height={320} 
+                            <Image
+                                src="/bopp-tape-banner.jpeg"
+                                alt="BOPP Tape in industrial use"
+                                width={480}
+                                height={320}
                                 className="rounded-lg"
                                 loading="lazy"
                             />
