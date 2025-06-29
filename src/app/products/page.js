@@ -1,10 +1,10 @@
-import { products } from '@/app/lib/products'
-import ClientFilter from './client-filter'
+import { products } from '@/lib/data/products'
+import ProductsSearchWrapper from './products-search-wrapper'
 import HeroBanner from '@/components/HeroBanner'
 
 export const metadata = {
   title: 'Our Products',
-  description: 'Explore eco-conscious plastic packaging that doesn’t compromise on strength or quality.',
+  description: 'Explore eco-conscious plastic packaging that doesn\'t compromise on strength or quality.',
   openGraph: {
     url: '/products',
     images: [
@@ -29,7 +29,7 @@ export default function ProductsPage() {
         description="Discover our comprehensive range of industrial packaging solutions designed for durability, sustainability, and efficiency."
         backgroundImage="/product-banner.jpeg"
       />
-      <ClientFilter initialProducts={products} />
+      <ProductsSearchWrapper products={products} />
     </main>
   )
 }

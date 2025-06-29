@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
-import Catalog from "@/components/Catalog";
-import { products } from "@/app/lib/products";
+import ProductCatalog from "@/components/ProductCatalog";
+import ClientCatalog from "@/components/ClientCatalog";
+import { products } from "@/lib/data/products";
+import { clients } from "@/lib/data/clients";
 
 export const metadata = {
   title: 'Home',
@@ -22,16 +24,33 @@ export const metadata = {
 };
 
 export default function Home() {
+  const sectorRepresentatives = Object.values(
+    clients.reduce((groups, client) => {
+      if (!groups[client.sector]) {
+        groups[client.sector] = client;
+      }
+      return groups;
+    }, {})
+  ).slice(0, 4);
+
   return (
     <div>
       <Hero />
-      <Catalog
+      <ProductCatalog
         title="Our Product Range"
         subtitle="Comprehensive packaging solutions for every industry"
         products={products.slice(0, 4)}
         ctaText="View All Products"
         ctaLink="/products"
         backgroundColor="bg-soft"
+      />
+      <ClientCatalog
+        title="Our Clients"
+        subtitle="Trusted by leading companies across diverse industries"
+        clients={sectorRepresentatives}
+        ctaText="View All Clients"
+        ctaLink="/industries"
+        backgroundColor="bg-white"
       />
     </div>
   );

@@ -1,12 +1,13 @@
 import Link from "next/link";
-import ProductCard from "./ProductCard";
+import Card from "./Card";
+import { mapClientToCard } from "@/lib/mappers/cardMappers";
 
-const Catalog = ({ 
-    title = "Our Product Range",
-    subtitle = "Comprehensive packaging solutions for every industry",
-    products = [],
-    ctaText = "View All Products",
-    ctaLink = "/products",
+const ClientCatalog = ({ 
+    title = "Our Clients",
+    subtitle = "Trusted by leading companies across diverse industries",
+    clients = [],
+    ctaText = "View All Clients",
+    ctaLink = "/industries",
     backgroundColor = "bg-gray-50"
   }) => {
     return (
@@ -22,10 +23,10 @@ const Catalog = ({
             </p>
           </div>
   
-          {/* Product Grid */}
+          {/* Client Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {clients.map((client) => (
+              <Card key={client.id} {...mapClientToCard(client)} />
             ))}
           </div>
   
@@ -45,5 +46,4 @@ const Catalog = ({
     );
   };
   
-  export default Catalog;
-  
+  export default ClientCatalog; 
