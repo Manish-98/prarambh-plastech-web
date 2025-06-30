@@ -1,8 +1,10 @@
 import Hero from "@/components/Hero";
-import ProductCatalog from "@/components/ProductCatalog";
-import ClientCatalog from "@/components/ClientCatalog";
+import Catalog from "@/components/Catalog";
+import Card from "@/components/Card";
 import { products } from "@/lib/data/products";
 import { clients } from "@/lib/data/clients";
+import { mapProductToCard } from "@/lib/mappers/cardMappers";
+import { mapClientToCard } from "@/lib/mappers/cardMappers";
 
 export const metadata = {
   title: 'Home',
@@ -24,6 +26,7 @@ export const metadata = {
 };
 
 export default function Home() {
+  // Get one client from each sector for the catalog
   const sectorRepresentatives = Object.values(
     clients.reduce((groups, client) => {
       if (!groups[client.sector]) {
@@ -31,23 +34,25 @@ export default function Home() {
       }
       return groups;
     }, {})
-  ).slice(0, 4);
+  ).slice(0, 4); // Take first 4 sectors
 
   return (
     <div>
       <Hero />
-      <ProductCatalog
+      <Catalog
         title="Our Product Range"
         subtitle="Comprehensive packaging solutions for every industry"
-        products={products.slice(0, 4)}
+        items={products.slice(0, 4)}
+        renderItem={(product) => <Card key={product.id} {...mapProductToCard(product)} />}
         ctaText="View All Products"
         ctaLink="/products"
         backgroundColor="bg-soft"
       />
-      <ClientCatalog
+      <Catalog
         title="Our Clients"
         subtitle="Trusted by leading companies across diverse industries"
-        clients={sectorRepresentatives}
+        items={sectorRepresentatives}
+        renderItem={(client) => <Card key={client.id} {...mapClientToCard(client)} />}
         ctaText="View All Clients"
         ctaLink="/industries"
         backgroundColor="bg-white"

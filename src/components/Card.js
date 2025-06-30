@@ -11,8 +11,8 @@ export default function Card({
   className = ""
 }) {
   return (
-    <div 
-      className={`bg-white rounded-xl shadow-sm border border-border overflow-hidden hover:shadow-md transition-all duration-200 hover:-translate-y-1 ${className}`}
+    <div
+      className={`w-full bg-white rounded-xl shadow-sm border border-border overflow-hidden hover:shadow-md transition-all duration-200 hover:-translate-y-1 ${className}`}
     >
       {image && (
         <div className="w-full h-48 bg-soft flex items-center justify-center p-6">
