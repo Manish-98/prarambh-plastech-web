@@ -1,5 +1,5 @@
 export const whatsappContact = {
-    number: '+919883863810',
+    number: '+919499741984',
     defaultMessage: 'Hi Prarambh Plastech, I have a query regarding your products.'
 };
 
@@ -11,13 +11,13 @@ export const contactInfo = [
     },
     {
         icon: 'phone',
-        text: '+91 98838 63810',
+        text: '+91 94997 41984, +91 82380 50391',
         link: `tel:${whatsappContact.number}`
     },
     {
         icon: 'email',
-        text: 'info@prarambhplastech.com',
-        link: 'mailto:info@prarambhplastech.com'
+        text: 'prarambhplastech@gmail.com',
+        link: 'mailto:prarambhplastech@gmail.com'
     },
     {
         icon: 'whatsapp',
